@@ -45,11 +45,17 @@
         return col;
     }
 
-
 	ENDCG
 
     SubShader
     {
+		Tags 
+		{ 
+			"RenderType"="Transparent" 
+			"Queue"="Transparent+1" 
+			"LightMode"="ForwardBase"
+		}
+
 		Pass
 		{
             Stencil
@@ -58,13 +64,6 @@
                 Comp Equal
             }
             
-			Tags 
-			{ 
-				"RenderType"="Transparent" 
-				"Queue"="Transparent+1" 
-				"LightMode"="ForwardBase"
-			}
-
 			Blend SrcAlpha OneMinusSrcAlpha 
 
             CGPROGRAM
@@ -72,7 +71,6 @@
 			#pragma fragment frag_0
 			ENDCG
 		}
-
         
         Pass
         {
@@ -82,13 +80,6 @@
                 Comp Equal
             }
             
-			Tags 
-			{ 
-				"RenderType"="Transparent" 
-				"Queue"="Transparent+1" 
-				"LightMode"="ForwardBase"
-			}
-
 			ZTest Always
 			Blend SrcAlpha OneMinusSrcAlpha 
 
@@ -99,6 +90,5 @@
 		}
 
 	}
-
 
 }
