@@ -1,1 +1,1 @@
-TestStencilWindow
+TestUnityStencilWindow
